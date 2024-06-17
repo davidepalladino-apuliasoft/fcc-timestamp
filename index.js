@@ -27,7 +27,7 @@ app.get("/api/hello", function (req, res) {
 
 app.get('/api/:date?', (req, res) => {
   let date = req.params.date;
-  if (date == null || date == undefined) {
+  if (date == null || date == undefined || date === "") {
     date = new Date(date);
   } else {
     if (date.match(`[0-9]{4}-[0-9]{2}-[0-9]{2}`)) {
